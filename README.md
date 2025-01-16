@@ -45,6 +45,58 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
+## Running with Docker
+
+### Prerequisites
+- Docker
+- Docker Compose
+
+### Environment Setup
+Create a `.env` file in the root directory with the following variables:
+```bash
+# Database
+POSTGRES_USER=secret
+POSTGRES_PASSWORD=secret
+POSTGRES_DB=secret
+
+# API
+DB_HOST=secret
+DB_PORT=secret
+DB_USERNAME=secret
+DB_PASSWORD=secret
+DB_NAME=secret
+NODE_ENV=secret
+```
+
+### Running the Application
+```bash
+# Build and start all services
+$ docker-compose up --build
+
+# Run in detached mode
+$ docker-compose up -d
+
+# Stop all services
+$ docker-compose down
+
+# View logs
+$ docker-compose logs -f api
+```
+
+### Container Management
+```bash
+# List running containers
+$ docker-compose ps
+
+# Access container shell
+$ docker-compose exec api sh
+
+# Restart services
+$ docker-compose restart
+```
+
+The API will be available at `http://localhost:3000`
+
 ## Test
 
 ```bash
